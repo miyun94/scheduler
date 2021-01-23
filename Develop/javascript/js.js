@@ -1,68 +1,49 @@
+// current day is displayed at top of calendar - somehow connect to the currentDay tag
+function getHeaderDate() {
+  let today = moment().format('dddd, MMMM Do')
+  $("#currentDay").append(today);
+  console.log(today);}
 
+function displayTime() {
+  let now = moment().format('HH:mm:ss')
+  $("#currentTime").html(now);
+  console.log(now); 
 }
 
-$(document).ready(function () {
-    // gets data for the header date
-    function getHeaderDate() {
-        let today = moment().format('dddd, MMMM Do')
-        $("#currentDay").append(today);
+getHeaderDate();
+displayTime(); 
+//timer(); 
 
-        var now = parseInt(moment().format('HH'));
-        console.log(now)
+//function timer() {
+  //setInterval(function(){displayTime()}, 1000)
+//}
 
-        var $text9AM = $("#text9AM");
-        var $text10AM = $("#text10AM");
-        var $text11AM = $("#text11AM");
-        var $text12AM = $("#text12AM");
-        var $text1PM = $("#text1PM");
-        var $text2PM = $("#text2PM");
-        var $text3PM = $("#text3PM");
-        var $text4PM = $("#text4PM");
-        var $text5PM = $("#text5PM");
+  //make a function where something is set to each hour
+  //.removeclass
+  //.addclass
 
+//change color of schedule-text
 
-        $("textarea").each(function () {
-            var name = parseInt($(this).attr("name"));
-            if (name < now) {
-                $(this).addClass("bg-gray");
-            }
+let nineAM = moment().startOf('day').add(9, 'h'); 
+console.log(nineAM.format('HH:mm:ss')); 
 
+let currentTime = moment()
 
-            if (name > now) {
-                $(this).addClass("bg-green")
-            }
+if (currentTime.isBefore(nineAM)) {
+  $('#nineAM').addClass('future')
+  console.log('before');
+} else if(currentTime.isAfter(nineAM)) {
+  $('#nineAM').addClass('past')
+  console.log('after')}
+else {$('#nineAM').addClass('present')
+  console.log('now')}
 
-            if (name === now) {
-                $(this).addClass("bg-red")
-            }
+//function backgroundColor(){
+  //let currentTime = 
+//if (currentTime > ) // should connect to .past
+//else if (currentTime = ) // should connect to .present
+//else if (currentTime < ) // should connect to .future/
+//}
 
-
-
-        })
-
-        $("button").on("click", function () {
-
-            //setting items in the local storage
-            localStorage.setItem("9AM", ($text9AM.val()))
-            localStorage.setItem("10AM", ($text10AM.val()))
-            localStorage.setItem("11AM", ($text11AM.val()))
-            localStorage.setItem("12AM", ($text12AM.val()))
-            localStorage.setItem("13PM", ($text1PM.val()))
-            localStorage.setItem("14PM", ($text2PM.val()))
-            localStorage.setItem("15PM", ($text3PM.val()))
-            localStorage.setItem("16PM", ($text4PM.val()))
-            localStorage.setItem("17PM", ($text5PM.val()))
-
-        })
-
-        //getting the content stored and sending to the screen. When page is refreshed content will stay
-        $("#text9AM").append(localStorage.getItem("9AM"));
-        $("#text10AM").append(localStorage.getItem("10AM"));
-        $("#text11AM").append(localStorage.getItem("11AM"));
-        $("#text12AM").append(localStorage.getItem("12AM"));
-        $("#text1PM").append(localStorage.getItem("13PM"));
-        $("#text2PM").append(localStorage.getItem("14PM"));
-        $("#text3PM").append(localStorage.getItem("15PM"));
-        $("#text4PM").append(localStorage.getItem("16PM"));
-        $("#text5PM").append(localStorage.getItem("17PM"));
-    })
+//localStorage.setItem("schedule", $('#scheduler-text').val());
+//$('#scheduler-text').val(localStorage.getItem("schedule"))
