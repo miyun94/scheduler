@@ -99,9 +99,9 @@ if (currentTime.isBefore(onePM)) {
   $('#onePM').addClass('past')
   console.log('after')
 }
-let hourStartOne = moment("01:00:00", "HH:mm:ss")
-let hourEndOne = moment("01:59:59", "HH:mm:ss")
-if (currentTime.isBetween(hourStartTwelve, hourEndTwelve)) {
+let hourStartOne = moment("13:00:00", "HH:mm:ss")
+let hourEndOne = moment("13:59:59", "HH:mm:ss")
+if (currentTime.isBetween(hourStartOne, hourEndOne)) {
   $('#onePM').addClass('present')
   console.log('now')
 }
@@ -202,5 +202,61 @@ $("button").on("click", function () {
   localStorage.setItem("10AM", (valueAtTen))
 })
 $("#tenAM").append(localStorage.getItem("10AM"))
+
+$("button").on("click", function () {
+  let valueAtEleven = $('#elevenAM').val()
+  console.log(valueAtEleven); 
+  localStorage.setItem("11AM", (valueAtEleven))
+})
+$("#elevenAM").append(localStorage.getItem("11AM"))
+
+$("button").on("click", function () {
+  let valueAtTwelve = $('#twlevePM').val()
+  console.log(valueAtTwelve); 
+  localStorage.setItem("12PM", (valueAtTwelve))
+})
+$("#twelvePM").append(localStorage.getItem("12PM"))
+
+$("button").on("click", function () {
+  let valueAtOne = $('#onePM').val()
+  console.log(valueAtOne); 
+  localStorage.setItem("1PM", (valueAtOne))
+})
+$("#onePM").append(localStorage.getItem("1PM"))
+
+$("button").on("click", function () {
+  let valueAtTwo = $('#twoPM').val()
+  console.log(valueAtTwo); 
+  localStorage.setItem("2PM", (valueAtTwo))
+})
+$("#twoPM").append(localStorage.getItem("2PM"))
+
+$("button").on("click", function () {
+  let valueAtThree = $('#threePM').val()
+  console.log(valueAtThree); 
+  localStorage.setItem("3PM", (valueAtThree))
+})
+$("#threePM").append(localStorage.getItem("3PM"))
+
+$("button").on("click", function () {
+  let valueAtFour = $('#fourPM').val()
+  console.log(valueAtFour); 
+  localStorage.setItem("4PM", (valueAtFour))
+})
+$("#fourPM").append(localStorage.getItem("4PM"))
+
+$("button").on("click", function () {
+  let valueAtFive = $('#fivePM').val()
+  console.log(valueAtFive); 
+  localStorage.setItem("5PM", (valueAtFive))
+})
+$("#fivePM").append(localStorage.getItem("5PM"))
+
+$("button").on("click", function () {
+  let valueAtSix = $('#sixPM').val()
+  console.log(valueAtSix); 
+  localStorage.setItem("6PM", (valueAtSix))
+})
+$("#sixPM").append(localStorage.getItem("6PM"))
 
 })
