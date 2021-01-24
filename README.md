@@ -8,7 +8,7 @@ HTML, BOOSTRAP, CSS, JAVASCRIPT
 
 ## Website 
 https://miyun94.github.io/scheduler/
-![Screenshot of Website] (/Develop/assets/screenshot.jpeg)
+![Screenshot of Website](/Develop/assets/screenshot.jpeg)
 
 ## Contribution
 Made by Ellen
