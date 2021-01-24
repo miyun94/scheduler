@@ -115,8 +115,8 @@ if (currentTime.isBefore(twoPM)) {
   $('#twoPM').addClass('past')
   console.log('after')
 }
-let hourStartTwo = moment("02:00:00", "HH:mm:ss")
-let hourEndTwo = moment("02:59:59", "HH:mm:ss")
+let hourStartTwo = moment("14:00:00", "HH:mm:ss")
+let hourEndTwo = moment("14:59:59", "HH:mm:ss")
 if (currentTime.isBetween(hourStartTwo, hourEndTwo)) {
   $('#twoPM').addClass('present')
   console.log('now')
@@ -131,8 +131,8 @@ if (currentTime.isBefore(threePM)) {
   $('#threePM').addClass('past')
   console.log('after')
 }
-let hourStartThree = moment("03:00:00", "HH:mm:ss")
-let hourEndThree = moment("03:59:59", "HH:mm:ss")
+let hourStartThree = moment("15:00:00", "HH:mm:ss")
+let hourEndThree = moment("15:59:59", "HH:mm:ss")
 if (currentTime.isBetween(hourStartThree, hourEndThree)) {
   $('#threePM').addClass('present')
   console.log('now')
@@ -146,8 +146,8 @@ if (currentTime.isBefore(fourPM)) {
   $('#fourPM').addClass('past')
   console.log('after')
 }
-let hourStartFour = moment("04:00:00", "HH:mm:ss")
-let hourEndFour = moment("04:59:59", "HH:mm:ss")
+let hourStartFour = moment("16:00:00", "HH:mm:ss")
+let hourEndFour = moment("16:59:59", "HH:mm:ss")
 if (currentTime.isBetween(hourStartFour, hourEndFour)) {
   $('#fourPM').addClass('present')
   console.log('now')
@@ -162,8 +162,8 @@ if (currentTime.isBefore(fivePM)) {
   $('#fivePM').addClass('past')
   console.log('after')
 }
-let hourStartFive = moment("05:00:00", "HH:mm:ss")
-let hourEndFive = moment("05:59:59", "HH:mm:ss")
+let hourStartFive = moment("17:00:00", "HH:mm:ss")
+let hourEndFive = moment("17:59:59", "HH:mm:ss")
 if (currentTime.isBetween(hourStartFive, hourEndFive)) {
   $('#fivePM').addClass('present')
   console.log('now')
@@ -178,8 +178,8 @@ if (currentTime.isBefore(sixPM)) {
   $('#sixPM').addClass('past')
   console.log('after')
 }
-let hourStartSix = moment("06:00:00", "HH:mm:ss")
-let hourEndSix = moment("06:59:59", "HH:mm:ss")
+let hourStartSix = moment("18:00:00", "HH:mm:ss")
+let hourEndSix = moment("18:59:59", "HH:mm:ss")
 if (currentTime.isBetween(hourStartSix, hourEndSix)) {
   $('#sixPM').addClass('present')
   console.log('now')
@@ -211,7 +211,7 @@ $("button").on("click", function () {
 $("#elevenAM").append(localStorage.getItem("11AM"))
 
 $("button").on("click", function () {
-  let valueAtTwelve = $('#twlevePM').val()
+  let valueAtTwelve = $('#twelvePM').val()
   console.log(valueAtTwelve); 
   localStorage.setItem("12PM", (valueAtTwelve))
 })
