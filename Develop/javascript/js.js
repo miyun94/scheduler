@@ -38,12 +38,6 @@ if (currentTime.isBefore(nineAM)) {
 else {$('#nineAM').addClass('present')
   console.log('now')}
 
-//function backgroundColor(){
-  //let currentTime = 
-//if (currentTime > ) // should connect to .past
-//else if (currentTime = ) // should connect to .present
-//else if (currentTime < ) // should connect to .future/
-//}
 
 //localStorage.setItem("schedule", $('#scheduler-text').val());
 //$('#scheduler-text').val(localStorage.getItem("schedule"))
