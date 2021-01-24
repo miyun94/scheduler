@@ -14,16 +14,17 @@ function displayTime() {
 
 getHeaderDate();
 displayTime();
-timer(); 
+timer();
 
 //makes the time on top change every second
 function timer() {
-setInterval(function(){displayTime()}, 1000)
+  setInterval(function () { displayTime() }, 1000)
 }
 
-//change color of schedule-text for each hour depending on whether time is in the past, future, or present 
-let currentTime = moment()
 
+//set current time to refer back to 
+let currentTime = moment()
+//change color of schedule-text for each hour depending on whether time is in the past, future, or present
 let nineAM = moment().startOf('day').add(9, 'h');
 console.log(nineAM.format('HH:mm:ss'));
 if (currentTime.isBefore(nineAM)) {
@@ -33,7 +34,9 @@ if (currentTime.isBefore(nineAM)) {
   $('#nineAM').addClass('past')
   console.log('after')
 }
-else {
+let hourStartNine = moment("9:00:00", "HH:mm:ss")
+let hourEndNine = moment("9:59:59", "HH:mm:ss")
+if (currentTime.isBetween(hourStartNine, hourEndNine)) {
   $('#nineAM').addClass('present')
   console.log('now')
 }
@@ -47,21 +50,28 @@ if (currentTime.isBefore(tenAM)) {
   $('#tenAM').addClass('past')
   console.log('after')
 }
-else {
+let hourStartTen = moment("10:00:00", "HH:mm:ss")
+let hourEndTen = moment("10:59:59", "HH:mm:ss")
+if (currentTime.isBetween(hourStartTen, hourEndTen)) {
   $('#tenAM').addClass('present')
   console.log('now')
 }
 
-let elevenAM = moment().startOf('day').add(11, 'h'); 
-console.log(elevenAM.format('HH:mm:ss')); 
+let elevenAM = moment().startOf('day').add(11, 'h');
+console.log(elevenAM.format('HH:mm:ss'));
 if (currentTime.isBefore(elevenAM)) {
   $('#elevenAM').addClass('future')
   console.log('before');
-} else if(currentTime.isAfter(elevenAM)) {
+} else if (currentTime.isAfter(elevenAM)) {
   $('#elevenAM').addClass('past')
-  console.log('after')}
-else {$('#elevenAM').addClass('present')
-  console.log('now')}
+  console.log('after')
+}
+let hourStartEleven = moment("11:00:00", "HH:mm:ss")
+let hourEndeleven = moment("11:59:59", "HH:mm:ss")
+if (currentTime.isBetween(hourStartEleven, hourEndeleven)) {
+  $('#elevenAM').addClass('present')
+  console.log('now')
+}
 
 
 let twelvePM = moment().startOf('day').add(12, 'h');
@@ -73,7 +83,9 @@ if (currentTime.isBefore(twelvePM)) {
   $('#twelvePM').addClass('past')
   console.log('after')
 }
-else {
+let hourStartTwelve = moment("12:00:00", "HH:mm:ss")
+let hourEndTwelve = moment("12:59:59", "HH:mm:ss")
+if (currentTime.isBetween(hourStartTwelve, hourEndTwelve)) {
   $('#twelvePM').addClass('present')
   console.log('now')
 }
@@ -87,7 +99,9 @@ if (currentTime.isBefore(onePM)) {
   $('#onePM').addClass('past')
   console.log('after')
 }
-else {
+let hourStartOne = moment("01:00:00", "HH:mm:ss")
+let hourEndOne = moment("01:59:59", "HH:mm:ss")
+if (currentTime.isBetween(hourStartTwelve, hourEndTwelve)) {
   $('#onePM').addClass('present')
   console.log('now')
 }
@@ -101,7 +115,9 @@ if (currentTime.isBefore(twoPM)) {
   $('#twoPM').addClass('past')
   console.log('after')
 }
-else {
+let hourStartTwo = moment("02:00:00", "HH:mm:ss")
+let hourEndTwo = moment("02:59:59", "HH:mm:ss")
+if (currentTime.isBetween(hourStartTwo, hourEndTwo)) {
   $('#twoPM').addClass('present')
   console.log('now')
 }
@@ -115,11 +131,12 @@ if (currentTime.isBefore(threePM)) {
   $('#threePM').addClass('past')
   console.log('after')
 }
-else {
+let hourStartThree = moment("03:00:00", "HH:mm:ss")
+let hourEndThree = moment("03:59:59", "HH:mm:ss")
+if (currentTime.isBetween(hourStartThree, hourEndThree)) {
   $('#threePM').addClass('present')
   console.log('now')
 }
-
 let fourPM = moment().startOf('day').add(16, 'h');
 console.log(fourPM.format('HH:mm:ss'));
 if (currentTime.isBefore(fourPM)) {
@@ -129,7 +146,9 @@ if (currentTime.isBefore(fourPM)) {
   $('#fourPM').addClass('past')
   console.log('after')
 }
-else {
+let hourStartFour = moment("04:00:00", "HH:mm:ss")
+let hourEndFour = moment("04:59:59", "HH:mm:ss")
+if (currentTime.isBetween(hourStartFour, hourEndFour)) {
   $('#fourPM').addClass('present')
   console.log('now')
 }
@@ -143,7 +162,9 @@ if (currentTime.isBefore(fivePM)) {
   $('#fivePM').addClass('past')
   console.log('after')
 }
-else {
+let hourStartFive = moment("05:00:00", "HH:mm:ss")
+let hourEndFive = moment("05:59:59", "HH:mm:ss")
+if (currentTime.isBetween(hourStartFive, hourEndFive)) {
   $('#fivePM').addClass('present')
   console.log('now')
 }
@@ -157,17 +178,29 @@ if (currentTime.isBefore(sixPM)) {
   $('#sixPM').addClass('past')
   console.log('after')
 }
-else {
+let hourStartSix = moment("06:00:00", "HH:mm:ss")
+let hourEndSix = moment("06:59:59", "HH:mm:ss")
+if (currentTime.isBetween(hourStartSix, hourEndSix)) {
   $('#sixPM').addClass('present')
   console.log('now')
 }
 
-//set things to local storage when save button is clicked
-var saveButton = document.querySelector('btn')
-saveButton.onclick = saveData;
+//set things to local storage when save button is clicked for each hour 
 
-function saveData(){
-  var input = document.getElementById("nineAM");
-  localStorage.setItem("form-control", input.value);
-  var storedValue = localStorage.getItem("form-control");
-}
+
+$(document).ready(function () {
+  $("button").on("click", function () {
+  let valueAtNine = $('#nineAM').val()
+  console.log(valueAtNine); 
+  localStorage.setItem("9AM", (valueAtNine))
+})
+$("#nineAM").append(localStorage.getItem("9AM"))
+
+$("button").on("click", function () {
+  let valueAtTen = $('#tenAM').val()
+  console.log(valueAtTen); 
+  localStorage.setItem("10AM", (valueAtTen))
+})
+$("#tenAM").append(localStorage.getItem("10AM"))
+
+})
